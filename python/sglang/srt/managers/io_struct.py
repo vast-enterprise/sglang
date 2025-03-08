@@ -115,6 +115,7 @@ class GenerateReqInput:
                 self.is_single = True
                 self.batch_size = 1
             else:
+                self.is_single = False
                 self.batch_size = len(self.input_embeds)
 
         # Handle parallel sampling
@@ -228,6 +229,7 @@ class GenerateReqInput:
         return GenerateReqInput(
             text=self.text[i] if self.text is not None else None,
             input_ids=self.input_ids[i] if self.input_ids is not None else None,
+            input_embeds=self.input_embeds[i] if self.input_embeds is not None else None,
             image_data=self.image_data[i],
             sampling_params=self.sampling_params[i],
             rid=self.rid[i],
