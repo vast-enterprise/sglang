@@ -116,6 +116,7 @@ class Engine:
         sampling_params: Optional[Union[List[Dict], Dict]] = None,
         # The token ids for text; one can either specify text or input_ids.
         input_ids: Optional[Union[List[List[int]], List[int]]] = None,
+        input_embeds: Optional[Union[List[List[List[float]]], List[List[float]]]] = None,
         # The image input. It can be a file name, a url, or base64 encoded string.
         # See also python/sglang/srt/utils.py:load_image.
         image_data: Optional[Union[List[str], str]] = None,
@@ -139,6 +140,7 @@ class Engine:
         obj = GenerateReqInput(
             text=prompt,
             input_ids=input_ids,
+            input_embeds=input_embeds,
             sampling_params=sampling_params,
             image_data=image_data,
             return_logprob=return_logprob,
@@ -176,6 +178,7 @@ class Engine:
         sampling_params: Optional[Union[List[Dict], Dict]] = None,
         # The token ids for text; one can either specify text or input_ids.
         input_ids: Optional[Union[List[List[int]], List[int]]] = None,
+        input_embeds: Optional[Union[List[List[List[float]]], List[List[float]]]] = None,
         # The image input. It can be a file name, a url, or base64 encoded string.
         # See also python/sglang/srt/utils.py:load_image.
         image_data: Optional[Union[List[str], str]] = None,
@@ -194,6 +197,7 @@ class Engine:
         obj = GenerateReqInput(
             text=prompt,
             input_ids=input_ids,
+            input_embeds=input_embeds,
             sampling_params=sampling_params,
             image_data=image_data,
             return_logprob=return_logprob,
